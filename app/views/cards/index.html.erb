@@ -1,0 +1,17 @@
+<h1>Карточки</h1>
+
+<table border=0 cellSpacing=5 cellPadding=0>
+  <tr>
+    <th>Оригинальный текст</th>
+    <th>Перевод текста</th>
+    <th>Дата проверки</th>
+  </tr>
+
+  <% @cards.each do |card| %>
+    <tr>
+      <td><%= card.original_text %></td>
+      <td><%= card.translated_text %></td>
+      <td><%= card.review_date.strftime('%d/%m/%Y') %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,74 @@
+[33mcommit 498ea066e9c89ab454ac5b9b693f5d2bf56da44e[m
+Author: Max Obushenko <max.obushenko@gmail.com>
+Date:   Wed Mar 2 21:25:02 2016 +0200
+
+    Update Pages controller
+
+[33mcommit 9c3edf1fd3185c0d91889ca3714b23355f5bb7a6[m
+Author: Max Obushenko <max.obushenko@gmail.com>
+Date:   Wed Mar 2 21:21:30 2016 +0200
+
+    Added Controller and added some objects of Cards
+
+[33mcommit c357aa63aeb31ba43ed64b8ecb7e937fbc361aee[m
+Author: Max Obushenko <max.obushenko@gmail.com>
+Date:   Wed Mar 2 21:06:15 2016 +0200
+
+    Migrated Card model
+
+[33mcommit c054b61b31c16423a441b6668a17ecc80615d7bd[m
+Author: Max Obushenko <max.obushenko@gmail.com>
+Date:   Wed Mar 2 19:30:19 2016 +0200
+
+    Created Card model
+
+[33mcommit e8459c217b6fa645a2642ab097ac5760c54489c0[m
+Author: Max Obushenko <max.obushenko@gmail.com>
+Date:   Wed Mar 2 19:29:37 2016 +0200
+
+    Configure Postgresql
+
+[33mcommit a8cd7afbc7accb139cf5c845982dc8d965e43276[m
+Merge: 5009aef dd151a8
+Author: Max Obushenko <max.obushenko@gmail.com>
+Date:   Mon Feb 29 16:39:55 2016 +0300
+
+    Merge pull request #2 from pinymax/first-task
+    
+    First task
+
+[33mcommit dd151a8876c0651b3f82a0dde9abed843334f96c[m
+Author: Max Obushenko <max.obushenko@gmail.com>
+Date:   Mon Feb 29 11:34:01 2016 +0000
+
+    Added spring-1000 folder and config/database.yml in gitignore and deleted them from repo. Deleted css connection
+
+[33mcommit e7dafd3e6e1154740706f5dcff3b2255fa9f5462[m
+Author: Max Obushenko <max.obushenko@gmail.com>
+Date:   Mon Feb 29 11:17:10 2016 +0000
+
+    Changed require mistake
+
+[33mcommit 5aa9a71f1cb4331af9fe788bd063bb03d16266e1[m
+Author: Max Obushenko <max.obushenko@gmail.com>
+Date:   Mon Feb 29 11:14:40 2016 +0000
+
+    Deleted require line and reposition css connection line
+
+[33mcommit edaf5e0f86f359780c70f2cbd568475ad2900b4a[m
+Author: Max Obushenko <max.obushenko@gmail.com>
+Date:   Mon Feb 29 10:33:57 2016 +0000
+
+    Fixed Bootstrap issue
+
+[33mcommit 736a7190d770a0359ceef0fa8c9ed06816276380[m
+Author: Max Obushenko <max.obushenko@gmail.com>
+Date:   Sun Feb 28 18:49:18 2016 +0000
+
+    First task
+
+[33mcommit 5009aef17775ed5a133f23638d3ed76d3bb0a307[m
+Author: Max Obushenko <max.obushenko@gmail.com>
+Date:   Sun Feb 28 18:42:53 2016 +0000
+
+    Created Rails App
