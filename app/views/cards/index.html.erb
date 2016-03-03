@@ -1,0 +1,20 @@
+<h1>Карточки</h1>
+<div class="media">
+  <div class="media-body">
+  <table class="table table-hover">
+  <tr>
+    <th>Оригинальный текст</th>
+    <th>Перевод текста</th>
+    <th>Дата проверки</th>
+  </tr>
+
+  <% @cards.each do |card| %>
+    <tr>
+      <td><%= card.original_text %></td>
+      <td><%= card.translated_text %></td>
+      <td><%= card.review_date.strftime('%d/%m/%Y') %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+</div>
