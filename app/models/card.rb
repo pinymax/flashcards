@@ -11,7 +11,7 @@ private
     end
 
     def check
-     if original_text == self.translated_text
+     if original_text.upcase == self.translated_text.upcase
        errors.add(:translated_text, "Содержимое полей не может быть одинаковым!")
      end
     end
