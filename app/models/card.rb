@@ -1,6 +1,7 @@
 class Card < ActiveRecord::Base
   validates_presence_of  :original_text, :translated_text
   validate :check
+  before_save :date_set
 
 
 
