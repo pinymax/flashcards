@@ -12,7 +12,7 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.create(cards_params)
-    @card.review_date = Time.now+3.days
+    #@card.review_date = Time.now+3.days
     @card.save
     if @card.errors.empty?
       redirect_to @card
