@@ -1,6 +1,6 @@
 class Card < ActiveRecord::Base
-
 before_save :date_set
+
 
 
   def date_set
