@@ -1,6 +1,6 @@
 class Card < ActiveRecord::Base
-  validates_presence_of  :original_text, :translated_text
-  validate :check
+  validates :original_text, :translated_text, presence: true
+  validate  :check_if_fields_uniq_between_themselfs
   before_save :date_set
 
 
@@ -11,7 +11,7 @@ private
       self.review_date = Time.now+3.days
     end
 
-    def check
+    def check_if_fields_uniq_between_themselfs
      if original_text.upcase == self.translated_text.upcase
        errors.add(:translated_text, "Содержимое полей не может быть одинаковым!")
      end
