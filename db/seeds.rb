@@ -1,9 +1,12 @@
-require 'rubygems'
-require 'nokogiri'
-require 'open-uri'
+require "rubygems"
+require "nokogiri"
+require "open-uri"
 
 url = "http://www.languagedaily.com/learn-german/vocabulary/common-german-words"
 doc = Nokogiri::HTML(open(url))
-doc.css(".bigLetter").each do |word|
-  Card.create({"original_text" => "#{word.text}"})
+origin = doc.css(".bigLetter")
+transl = doc.css(".bigLetter+ td")
+
+origin.each_with_index do |val, index|
+  Card.create({"original_text" => "#{val.text}", "translated_text" => "#{transl[index].text}" })
 end
