@@ -13,12 +13,15 @@ class CardsController < ApplicationController
 
   def index_train
     random_card()
+  unless @train.nil?
     if params[:transl] == @train.translated_text
        flash[:notice] = "Good"
+       @train.review_date = Time.now + 3.days
+       @train.save
        redirect_to root_url
-     end 
+     end
   end
-
+end 
 
 
 
