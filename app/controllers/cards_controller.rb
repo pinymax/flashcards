@@ -2,12 +2,30 @@ class CardsController < ApplicationController
 
   before_action :find_card, only: [:show, :edit, :update, :destroy]
 
+  def random_card
+    offset = rand(Card.checktime.count)
+    @train = Card.checktime.offset(offset).first
+    return @train
+  end
+
+
 
 
   def index_train
-    offset = rand(Card.checktime.count)
-    @train = Card.checktime.offset(offset).first
+    random_card()
+    if params[:transl] == @train.translated_text
+       flash[:notice] = "Good"
+       redirect_to root_url
+     end 
   end
+
+
+
+
+
+
+
+
 
   def index
     @cards = Card.all

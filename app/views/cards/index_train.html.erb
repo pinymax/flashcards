@@ -1,6 +1,16 @@
+<div class="container">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+</div>
+
+
 <p>Первый в мире удобный менеджер флеш-карточек. Именно так.</p>
 
-  <% unless @train.nil? %>
-  <%= @train.review_date %>
-  <%= @train.original_text %>
+<% unless @train.nil? %>
+<p> <%= @train.original_text %> </p>
+    <%= form_tag cards_path do %>
+    <%= text_field_tag :transl %>
+    <button>Send</button>
+    <% end %> 
 <% end %>

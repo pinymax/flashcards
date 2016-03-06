@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
 
-
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  root "cards#index_train"
+  post "cards" => "cards#index_train"
   # You can have the root of your site routed with "root"
-  root 'cards#index_train'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
