@@ -1,6 +1,6 @@
 class Card < ActiveRecord::Base
-#  validates :original_text, :translated_text, presence: true
-#  validate  :check_if_fields_uniq_between_themselfs
+  validates :original_text, :translated_text, presence: true
+  validate  :check_if_fields_uniq_between_themselfs
   before_save :date_set
 
 
