@@ -10,7 +10,7 @@ class CardsController < ApplicationController
 
   def index_train
     random_card()
-    unless @train.nil?
+    if @train
       long_transl = @train.translated_text.split(" ")
       if params[:transl] == long_transl[0]
         flash[:notice] = "Good"
