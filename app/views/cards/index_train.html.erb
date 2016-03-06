@@ -1,4 +1,6 @@
 <p>Первый в мире удобный менеджер флеш-карточек. Именно так.</p>
 
-<%= @train.review_date %>
-<%= @train.original_text%>
+  <% unless @train.nil? %>
+  <%= @train.review_date %>
+  <%= @train.original_text %>
+<% end %>

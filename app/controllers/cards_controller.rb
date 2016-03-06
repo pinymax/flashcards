@@ -3,6 +3,7 @@ class CardsController < ApplicationController
   before_action :find_card, only: [:show, :edit, :update, :destroy]
 
 
+
   def index_train
     offset = rand(Card.checktime.count)
     @train = Card.checktime.offset(offset).first
