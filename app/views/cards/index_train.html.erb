@@ -8,9 +8,15 @@
 <p>Первый в мире удобный менеджер флеш-карточек. Именно так.</p>
 
 <% unless @train.nil? %>
-<p> <%= @train.original_text %> </p>
-    <%= form_tag cards_path do %>
+<br>
+<br>
+<br>
+<h2> Проверь себя: </h2>
+<h1 align="center"> <%= @train.original_text %> </h1>
+   <center><%= form_tag cards_path do %>
+    <div class="input-group">
     <%= text_field_tag :transl %>
-    <button>Отправить</button>
-    <% end %>
+    <center> <button>Отправить</button></center>
+    <% end %></center>
+  </div>
 <% end %>
