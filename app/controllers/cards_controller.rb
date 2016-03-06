@@ -4,8 +4,8 @@ class CardsController < ApplicationController
 
 
   def index_train
-    offset = rand(Card.count)
-    @train = Card.offset(offset).first
+    offset = rand(Card.checktime.count)
+    @train = Card.checktime.offset(offset).first
   end
 
   def index
