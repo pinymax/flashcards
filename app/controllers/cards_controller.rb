@@ -17,8 +17,8 @@ class CardsController < ApplicationController
        @train.review_date = Time.now + 3.days
        @train.save
        redirect_to root_url
+     end
     end
-  end
   end
 
 
