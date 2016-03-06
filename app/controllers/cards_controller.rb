@@ -2,6 +2,12 @@ class CardsController < ApplicationController
 
   before_action :find_card, only: [:show, :edit, :update, :destroy]
 
+
+  def index_train
+    offset = rand(Card.count)
+    @train = Card.offset(offset).first
+  end
+
   def index
     @cards = Card.all
   end
