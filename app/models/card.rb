@@ -1,7 +1,7 @@
 class Card < ActiveRecord::Base
   validates :original_text, :translated_text, presence: true
   validate  :check_if_fields_uniq_between_themselfs
-  #before_save :date_set
+  before_save :date_set
   scope :checktime, ->  { Card.where(["review_date <= ?", Date.today]) }
 
 private
