@@ -13,7 +13,7 @@
 <br>
 <h2> Проверь себя: </h2>
 <h1 align="center"> <%= @train.original_text %> </h1>
-   <center><%= form_tag cards_path do %>
+   <center><%= form_tag card_path do %>
     <div class="input-group">
     <%= text_field_tag :transl %>
     <center> <button>Отправить</button></center>

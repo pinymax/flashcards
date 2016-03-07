@@ -2,8 +2,12 @@ class CardsController < ApplicationController
 
   before_action :find_card, only: [:show, :edit, :update, :destroy]
 
-  def index_train
+  def card_get
     @train = Card.random_card
+  end
+
+  def index_train
+    card_get
     if @train
       long_transl = @train.translated_text.split(" ")
       if params[:transl] == long_transl[0]

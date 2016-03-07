@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   root "cards#index_train"
-  post "cards" => "cards#index_train"
+
+  get  "card" => "cards#card_get"
+  post "card" => "cards#index_train"
+
   # You can have the root of your site routed with "root"
 
   # Example of regular route:
