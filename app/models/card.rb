@@ -5,21 +5,18 @@ class Card < ActiveRecord::Base
   scope :checktime, -> { Card.where("review_date <= ?", Date.today) }
 
   def self.random_card
-    private
     offset = rand(checktime.count)
     train = checktime.offset(offset).first
     train
   end
 
   def self.traing(train)
-    private
     if train
       train.review_date = Time.now + 3.days
       train.save
     end
   end
-  
-private
+  private
     def date_set
       self.review_date = Time.now+3.days
     end
