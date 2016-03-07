@@ -2,8 +2,6 @@ class CardsController < ApplicationController
 
   before_action :find_card, only: [:show, :edit, :update, :destroy]
 
-
-
   def index_train
     @train = Card.random_card
     if @train
@@ -14,7 +12,7 @@ class CardsController < ApplicationController
         redirect_to root_url
       end
     end
-  end 
+  end
 
   def index
     @cards = Card.all
