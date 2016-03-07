@@ -5,7 +5,7 @@ class Card < ActiveRecord::Base
   scope :random_card, -> { where("review_date <= ?", Date.today).order("RANDOM()") }
 
   def self.checker(card, transl)
-    if card.translated_text == transl
+    if card.translated_text.upcase == transl.upcase
       card.review_date = Date.today + 3.days
       card.save
     end
