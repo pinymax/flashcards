@@ -1,21 +1,16 @@
 class CardsController < ApplicationController
 
   before_action :find_card, only: [:show, :edit, :update, :destroy]
-
-  def card_get
-    @train = Card.random_card
+  def train
+    @training_card = Card.random_card.first
   end
 
-  def index_train
-    card_get
-    if @train
-      long_transl = @train.translated_text.split(" ")
-      if params[:transl] == long_transl[0]
-        Card.traing(@train)
-        flash[:notice] = "Good"
-        redirect_to root_url
-      end
-    end
+  def check_card
+    @card = Card.find(params[:id])
+    translate = params[:translate]
+    Card.checker(@card, translate)
+    flash[:notice] = "Good"
+      redirect_to root_url
   end
 
   def index

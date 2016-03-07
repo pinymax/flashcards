@@ -2,12 +2,9 @@ Rails.application.routes.draw do
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  root "cards#index_train"
-
-  get  "card" => "cards#card_get"
-  post "card" => "cards#index_train"
-
-  # You can have the root of your site routed with "root"
+  root "cards#train"
+  post "cards" => "cards#check_card"
+    # You can have the root of your site routed with "root"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -17,7 +14,6 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
    resources :cards
-
   # Example resource route with options:
   #   resources :products do
   #     member do
