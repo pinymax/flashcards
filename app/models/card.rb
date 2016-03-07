@@ -16,7 +16,9 @@ class Card < ActiveRecord::Base
       train.save
     end
   end
+
   private
+  
     def date_set
       self.review_date = Time.now+3.days
     end
