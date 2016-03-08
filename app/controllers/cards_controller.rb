@@ -12,7 +12,7 @@ class CardsController < ApplicationController
     if @card.review_date == Date.today + 3.days
       flash[:success] = "В точку!"
     else
-      flash[:error] = "Неверный перевод"
+      flash[:warning] = "Неверный перевод"
     end
       redirect_to root_url
   end
