@@ -10,10 +10,10 @@ class CardsController < ApplicationController
     translate = params[:translate]
     Card.checker(@card, translate)
     if @card.review_date == Date.today + 3.days
-      flash[:notice] = "Good"
+      flash[:success] = "В точку!"
     else
-      flash[:notice] = "Bad"
-    end 
+      flash[:error] = "Неверный перевод"
+    end
       redirect_to root_url
   end
 
