@@ -9,7 +9,11 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
     translate = params[:translate]
     Card.checker(@card, translate)
-    flash[:notice] = "Good"
+    if @card.review_date == Date.today + 3.days
+      flash[:notice] = "Good"
+    else
+      flash[:notice] = "Bad"
+    end 
       redirect_to root_url
   end
 
