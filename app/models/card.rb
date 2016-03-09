@@ -6,8 +6,11 @@ class Card < ActiveRecord::Base
 
   def self.checker(card, transl)
     if card.translated_text.upcase == transl.upcase
-      card.review_date = Date.today + 3.days
+      card.review_date = Time.now + 3.days
       card.save
+      true
+    else
+      false
     end
   end
 

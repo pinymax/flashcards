@@ -8,8 +8,7 @@ class CardsController < ApplicationController
   def check_card
     @card = Card.find(params[:id])
     translate = params[:translate]
-    Card.checker(@card, translate)
-    if @card.review_date == Date.today + 3.days
+    if Card.checker(@card, translate)
       flash[:success] = "В точку!"
     else
       flash[:warning] = "Неверный перевод"
