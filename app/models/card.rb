@@ -2,11 +2,20 @@ class Card < ActiveRecord::Base
   validates :original_text, :translated_text, presence: true
   validate  :check_if_fields_uniq_between_themselfs
   before_save :date_set
+  scope :random_card, -> { where("review_date <= ?", Date.today).order("RANDOM()") }
 
+  def checker(transl)
+    if self.translated_text.upcase == transl.upcase
+      self.review_date = Time.now + 3.days
+      self.save
+      true
+    else
+      false
+    end
+  end
 
+  private
 
-
-private
     def date_set
       self.review_date = Time.now+3.days
     end
@@ -16,6 +25,4 @@ private
        errors.add(:translated_text, "Содержимое полей не может быть одинаковым!")
      end
     end
-
-
 end
