@@ -1,0 +1,14 @@
+require "rails_helper"
+
+describe "train", type: :feature do
+  describe "Card chekcer" do
+    let!(:training_card) {FactoryGirl.create(:card)}
+      it "When user input right translate" do
+        visit root_path
+        puts page.body
+        fill_in("translate", :with => "Дом")
+        click_button("Отправить")
+        expect(page).to have_content ("В точку!")
+      end
+  end
+end

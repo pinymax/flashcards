@@ -8,7 +8,7 @@
 <br>
 <h2> Проверь себя: </h2>
 <h1 align="center"> <%= @training_card.original_text %> </h1>
-   <center><%= form_tag cards_path do %>
+   <center><%= form_tag check_translation_card_path(@training_card) do %>
     <div class="input-group">
     <%= text_field_tag :translate%>
     <%= hidden_field_tag :id, @training_card.id %>
