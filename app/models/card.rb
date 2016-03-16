@@ -22,7 +22,7 @@ class Card < ActiveRecord::Base
   end
 
   def check_if_fields_uniq_between_themselfs
-    if original_text.upcase == translated_text.upcase
+    if original_text.casecmp(translated_text).zero?
       errors.add(:translated_text, "Содержимое полей не может быть одинаковым!")
     end
   end
