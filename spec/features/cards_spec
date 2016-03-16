@@ -1,10 +1,12 @@
-require "rails_helper"
+require "rails_helper.rb"
 
 describe "train", type: :feature do
-  describe "If translate in card checker is right" do
+  describe "Card" do
     let!(:card) {FactoryGirl.create(:card)}
+    before do
+      card.update(:review_date => Date.today)
+    end
       it "When user input right translate" do
-        card.update_attribute :review_date, Date.today
         visit root_path
         puts page.body
         fill_in("translate", :with => "Дом")
