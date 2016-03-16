@@ -4,7 +4,7 @@ describe "train", type: :feature do
   describe "Card" do
     let!(:card) {FactoryGirl.create(:card)}
     before do
-      card.update(:review_date => Date.today)
+      card.update(review_date:  Date.today)
     end
       it "When user input right translate" do
         visit root_path

@@ -5,11 +5,7 @@ class Card < ActiveRecord::Base
   scope :random_card, -> { where("review_date <= ?", Date.today).order("RANDOM()") }
 
   def valid_translation?(translation)
-    if translated_text.casecmp(translation).zero?
-      true
-    else
-      false
-    end
+    translated_text.casecmp(translation).zero?
   end
 
   def mark_reviewed
