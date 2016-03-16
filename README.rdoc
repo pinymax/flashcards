@@ -1,1 +1,1 @@
-https://travis-ci.org/pinymax/flashcards.svg?branch=master
+{<img src="https://travis-ci.org/pinymax/flashcards.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/pinymax/flashcards]
