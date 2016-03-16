@@ -8,14 +8,13 @@ class CardsController < ApplicationController
   def check_translation
     @card = Card.find(params[:id])
     if @card.valid_translation?(params[:translate])
-       @card.mark_reviewed
+      @card.mark_reviewed
       flash[:success] = "В точку!"
     else
       flash[:warning] = "Неверный перевод"
     end
     redirect_to root_url
   end
-
 
   def index
     @cards = Card.all
