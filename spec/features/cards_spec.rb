@@ -2,7 +2,7 @@ require "rails_helper.rb"
 
 describe "train", type: :feature do
   describe "Card" do
-    let!(:card) {FactoryGirl.create(:card)}
+    let!(:card) { FactoryGirl.create(:card) }
     before do
       card.update(review_date:  Date.today)
     end
