@@ -3,17 +3,17 @@ require "rails_helper"
 describe Card do
   it "Checks the compare method" do
     card = Card.new(original_text: "hause", translated_text: "battle")
-    expect(card.checker("hAlel")).to be false
+    expect(card.valid_translation?("hAlel")).to be false
   end
 
   it "Checks the compere method with bad argument" do
     card = Card.new(original_text: "hause", translated_text: "battle")
-    expect(card.checker("   BAttlE")).to be false
+    expect(card.valid_translation?("   BAttlE")).to be false
   end
 
   it "Checks the compere method with good argument" do
     card = Card.new(original_text: "hause", translated_text: "battle")
-    expect(card.checker("battle")).to be true
+    expect(card.valid_translation?("battle")).to be true
   end
 
   it "Checks the date setter" do

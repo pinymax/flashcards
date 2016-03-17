@@ -5,9 +5,10 @@ class CardsController < ApplicationController
     @training_card = Card.random_card.first
   end
 
-  def check_card
+  def check_translation
     @card = Card.find(params[:id])
-    if @card.checker(params[:translate])
+    if @card.valid_translation?(params[:translate])
+      @card.mark_reviewed
       flash[:success] = "В точку!"
     else
       flash[:warning] = "Неверный перевод"
