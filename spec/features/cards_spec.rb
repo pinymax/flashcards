@@ -9,7 +9,6 @@ describe "train", type: :feature do
 
     it "When user input right translate" do
       visit root_path
-      puts page.body
       fill_in("translate", with: "Дом")
       click_button("Отправить")
       expect(page).to have_content "В точку!"
@@ -18,7 +17,6 @@ describe "train", type: :feature do
     it "When user input wrong translate" do
       card.update_attribute :review_date, Date.today
       visit root_path
-      puts page.body
       fill_in("translate", with: "asSds")
       click_button("Отправить")
       expect(page).to have_content "Неверный перевод"

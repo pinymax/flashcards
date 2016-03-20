@@ -1,4 +1,5 @@
 class Card < ActiveRecord::Base
+  belongs_to :user
   validates :original_text, :translated_text, presence: true
   validate  :check_if_fields_uniq_between_themselfs
   before_create :date_set
