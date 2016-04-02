@@ -5,20 +5,16 @@
   <title>Флэшкарточкер</title>
 
 </head>
-
 <body>
   <div id="nav">
     <% if current_user %>
+      <%= current_user.email %>
       <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
       <%= link_to "Logout", :logout, method: :post %>
     <% else %>
       <%= link_to "Register", new_user_path %> |
       <%= link_to "Login", :login %>
     <% end %>
-    <div>
-      <p id="notice"><%= flash[:notice] %></p>
-      <p id="alert"><%= flash[:alert] %></p>
-    </div>
   </div>
   <section id="container">
 

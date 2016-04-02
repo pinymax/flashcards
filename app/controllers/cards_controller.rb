@@ -26,6 +26,7 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.create(cards_params)
+    @card.user = current_user
     @card.save
     if @card.errors.empty?
       redirect_to @card
