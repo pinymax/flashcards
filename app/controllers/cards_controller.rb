@@ -1,8 +1,9 @@
 class CardsController < ApplicationController
 
   before_action :find_card, only: [:show, :edit, :update, :destroy]
+
   def train
-    @training_card = Card.random_card.first
+    @training_card = current_user.cards.random_card.first
   end
 
   def check_translation
