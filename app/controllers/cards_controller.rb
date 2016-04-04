@@ -26,7 +26,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.create(cards_params)
+    @card = current_user.cards.create(cards_params)
     @card.user = current_user
     @card.save
     if @card.errors.empty?
