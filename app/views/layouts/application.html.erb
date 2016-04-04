@@ -19,10 +19,12 @@
   <section id="container">
     <header class="clearfix">
       <h1>Флэшкарточкер</h1>
+      <% if current_user %>
       <ul class="navigation-links">
         <li><a href="#"><%= link_to "Все карточки", cards_path%></a></li>
         <li><a href="#"><%= link_to "Добавить карточку", new_card_path%></a></li>
       </ul>
+      <% end %>
     </header>
 
     <section>
