@@ -1,4 +1,7 @@
 require 'rails_helper'
-RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+  describe User do
+    it "Successfully creates user in DB" do
+      user = User.new(email: "mgbtua@gmail.com", password: "123")
+      expect(user.new_record?).to be true
+    end
+  end
