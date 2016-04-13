@@ -15,7 +15,7 @@ class Card < ActiveRecord::Base
   private
 
   def date_set
-    self.review_date = Date.today #+ 3.days
+    self.review_date = Date.today + 3.days
   end
 
   def check_if_fields_uniq_between_themselfs

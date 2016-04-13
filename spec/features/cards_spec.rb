@@ -3,11 +3,16 @@ require "rails_helper.rb"
 describe "train", type: :feature do
   describe "Card" do
     let!(:card) { FactoryGirl.create(:card) }
+    let!(:user) { FactoryGirl.create(:user) }
     before do
-      card.update(review_date:  Date.today)
+      card.update(review_date:  Date.today, user_id: user.id)
     end
 
     it "When user input right translate" do
+      visit login_path
+      fill_in("Email", with: "testing123@gmail.com")
+      fill_in("Password", with: "MyString")
+      click_button("Login")
       visit root_path
       fill_in("translate", with: "Дом")
       click_button("Отправить")
@@ -15,7 +20,10 @@ describe "train", type: :feature do
     end
 
     it "When user input wrong translate" do
-      card.update_attribute :review_date, Date.today
+      visit login_path
+      fill_in("Email", with: "testing123@gmail.com")
+      fill_in("Password", with: "MyString")
+      click_button("Login")
       visit root_path
       fill_in("translate", with: "asSds")
       click_button("Отправить")

@@ -30,6 +30,11 @@
     <section>
       <p style="font-size: 22px;">
         <%= yield %>
+        <div class="container">
+        <% flash.each do |key, value| %>
+        <h1><div class="alert alert-<%= key %>"><%= value %></div></h1>
+        </div>
+        <% end %>
       </p>
     </section>
 
