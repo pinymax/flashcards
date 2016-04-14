@@ -7,6 +7,7 @@
 <br>
 <br>
 <h2> Проверь себя: </h2>
+<center><%= image_tag @training_card.avatar.url(:medium)%></center>
 <h1 align="center"> <%= @training_card.original_text %> </h1>
    <center><%= form_tag check_translation_card_path(@training_card) do %>
     <div class="input-group">
