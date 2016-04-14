@@ -10,15 +10,15 @@
     <th></th>
   </tr>
 
-  <% @cards.each do |card| %>
-    <tr>
-      <td><%= card.original_text %></td>
-      <td><%= card.translated_text %></>
-      <td><%= card.review_date.try(:strftime, '%d/%m/%Y')%></td>
-      <td><%= link_to "Изменить", edit_card_path(card),  class: "btn btn-small btn-warning"%></td>
-      <td><%= link_to "Удалить", card, method: :delete, data: { confirm: "Вы уверенны?" }, class: "btn btn-small btn-danger"%></td>
-    </tr>
-  <% end %>
+  <% current_user.cards.each do |card| %>
+      <tr>
+        <td><%= card.original_text %></td>
+        <td><%= card.translated_text %></td>
+        <td><%= card.review_date.try(:strftime, '%d/%m/%Y')%></td>
+        <td><%= link_to "Изменить", edit_card_path(card),  class: "btn btn-small btn-warning"%></td>
+        <td><%= link_to "Удалить", card, method: :delete, data: { confirm: "Вы уверенны?" }, class: "btn btn-small btn-danger"%></td>
+      </tr>
+    <% end %>
 </table>
 </div>
 </div>

@@ -5,21 +5,36 @@
   <title>Флэшкарточкер</title>
 
 </head>
-
 <body>
+  <div id="nav">
+    <% if current_user %>
+      <%= current_user.email %>
+      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+      <%= link_to "Logout", :logout, method: :post %>
+    <% else %>
+      <%= link_to "Register", new_user_path %> |
+      <%= link_to "Login", :login %>
+    <% end %>
+  </div>
   <section id="container">
-
     <header class="clearfix">
       <h1>Флэшкарточкер</h1>
+      <% if current_user %>
       <ul class="navigation-links">
         <li><a href="#"><%= link_to "Все карточки", cards_path%></a></li>
         <li><a href="#"><%= link_to "Добавить карточку", new_card_path%></a></li>
       </ul>
+      <% end %>
     </header>
 
     <section>
       <p style="font-size: 22px;">
         <%= yield %>
+        <div class="container">
+        <% flash.each do |key, value| %>
+        <h1><div class="alert alert-<%= key %>"><%= value %></div></h1>
+        </div>
+        <% end %>
       </p>
     </section>
 

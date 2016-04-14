@@ -1,8 +1,9 @@
 class CardsController < ApplicationController
 
   before_action :find_card, only: [:show, :edit, :update, :destroy]
+
   def train
-    @training_card = Card.random_card.first
+    @training_card = current_user.cards.random_card.first
   end
 
   def check_translation
@@ -25,7 +26,8 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.create(cards_params)
+    @card = current_user.cards.create(cards_params)
+    @card.user = current_user
     @card.save
     if @card.errors.empty?
       redirect_to @card
