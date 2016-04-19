@@ -1,4 +1,6 @@
 class Card < ActiveRecord::Base
+  has_attached_file :avatar, styles: { medium: "300x300" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   belongs_to :user
   validates :original_text, :translated_text, presence: true
   validate  :check_if_fields_uniq_between_themselfs

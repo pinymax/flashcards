@@ -2,8 +2,8 @@ require "rails_helper.rb"
 
 describe "train", type: :feature do
   describe "Card" do
-    let!(:card) { FactoryGirl.create(:card) }
     let!(:user) { FactoryGirl.create(:user) }
+    let!(:card) { FactoryGirl.create(:card, user: user) }
     before do
       card.update(review_date:  Date.today, user_id: user.id)
     end

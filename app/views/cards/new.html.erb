@@ -1,5 +1,6 @@
 <%= simple_form_for @card do |f| %>
   <%= f.input :original_text %>
   <%= f.input :translated_text %>
+  <%= f.file_field :avatar %>
   <%= f.button :submit %>
 <% end %>
