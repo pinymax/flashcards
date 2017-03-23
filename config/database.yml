@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  database: app_development
+
+development:
+  <<: *default
+  database: development_db_name
+
+test:
+  <<: *default
+  database: test_db_name
+production:
+  <<: *default
+  database: prod_db_name
